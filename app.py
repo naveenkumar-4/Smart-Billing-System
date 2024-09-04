@@ -11,7 +11,7 @@ import os
 db=mysql.connect(
     host='localhost',
     user='root',
-    password='Srinadh@212002',
+    password='Naveenkumar@60',
     database='smart_billing'
 )
 
@@ -19,7 +19,7 @@ cur=db.cursor()
 
 
 app=Flask(__name__)
-app.secret_key="srinadh"
+app.secret_key=SECRET_KEY
 
 
 @app.route('/')
