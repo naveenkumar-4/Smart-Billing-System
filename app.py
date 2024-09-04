@@ -19,7 +19,7 @@ cur=db.cursor()
 
 
 app=Flask(__name__)
-app.secret_key=SECRET_KEY
+app.secret_key=os.getenv('SECRET_KEY')
 
 
 @app.route('/')
@@ -232,8 +232,8 @@ def Generate_OTP():
     return random.randrange(100000,999999)
 
 def Get_OTP(mobileno):
-    account_sid='AC01523fc60b88053ffbfe56b1902cea5a'
-    auth_token='2772bf2e35636a10c2d81e6105738e67'
+    account_sid=os.getenv('ACCOUNT_SID')
+    auth_token=os.getenv('AUTH_TOKEN')
     client= Client(account_sid,auth_token)
     otp=Generate_OTP()
     session['otp']=otp
